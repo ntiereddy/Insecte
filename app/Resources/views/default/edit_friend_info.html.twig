@@ -1,0 +1,16 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}
+	{{'Edit friend'}}
+{% endblock %}
+
+{% block fos_user_content %}
+	<form {{ form_enctype(form) }} method="POST" class="app_friend_edit">
+		<h1>{{ 'Edit friend'}}</h1>
+
+		{{ form_rest(form) }}
+
+		<br />
+		<input type="submit" id="submit" value="{{ 'Update' }}" name="submit" class="btn btn-primary" />
+	</form>
+{% endblock fos_user_content %}

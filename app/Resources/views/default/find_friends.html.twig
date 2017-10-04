@@ -1,0 +1,18 @@
+{% extends 'layout.html.twig' %}
+{% block fos_user_content %}
+	<form>
+		<h2>Liste d'insecte</h2><br>
+		<ul>
+		{% for value in users %} 
+			<li>
+				{{ value.username }}
+				<a class="btn-link" href="{{ path('add_friend', {'id' : value.id}) }}">
+			    	| Add insecte |
+				</a>
+			</li>         
+		{% else %}  
+			<li>Vous êtes le seul utilisateur du site (?!)</li>
+		{% endfor %}
+		</ul><br>
+	</form>
+{% endblock fos_user_content %}

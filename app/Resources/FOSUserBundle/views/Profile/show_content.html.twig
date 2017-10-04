@@ -1,0 +1,10 @@
+<div class="profil_form fos_user_user_show">
+    <h2>Profile</h2>
+    <p><label class="col-form-label"> Nom Insecte : </label> {{ user.username }}</p>
+    <p><label class="col-form-label">{{ 'profile.show.email'|trans({}, 'FOSUserBundle') }} : </label> {{ user.email }}</p>
+    <p>
+    	<a class="btn btn-primary" href="{{ path('fos_user_profile_edit') }}">
+            {{ 'profile.edit.submit'|trans({}, 'FOSUserBundle') }}
+        </a>
+    </p>
+</div>

@@ -1,0 +1,16 @@
+{% extends 'layout.html.twig' %}
+{% block fos_user_content %}
+	<form>
+		<h2>Informations</h2><br>
+		<p><label class="col-form-label">{{ 'Age'|trans({}, 'FOSUserBundle') }} : </label> {{ friend.age }}</p>
+		<p><label class="col-form-label">{{ 'Famille'|trans({}, 'FOSUserBundle') }} : </label> {{ friend.family }} </p>
+		<p>
+			<a class="btn btn-primary" href="{{ path('edit_friend', {'id' : friend.id}) }}">
+		        {{ 'profile.edit.submit'|trans({}, 'FOSUserBundle') }}
+		    </a>
+		    <a class="btn btn-danger" href="{{ path('unfriend', {'id' : friend.id}) }}">
+		        {{ 'Retirer de la liste d\'amis'|trans({}, 'FOSUserBundle') }}
+		    </a>
+		</p>
+	</form>
+{% endblock fos_user_content %}

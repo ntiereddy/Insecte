@@ -1,0 +1,15 @@
+{% extends 'layout.html.twig' %}
+{% block fos_user_content %}
+	<form>
+		<h2>Ma liste d'insecte</h2><br>
+		<ul>
+		{% for value in users %} 
+			<li><a class="btn-link" href="{{ path('friend_infos_page', {'id' : value.id}) }}">
+			    {{ value.username }}
+			</a></li>         
+		{% else %}  
+			<li>Vous n'avez pas d'insecte pour le moments</li>
+		{% endfor %}
+		</ul><br>
+	</form>
+{% endblock fos_user_content %}
